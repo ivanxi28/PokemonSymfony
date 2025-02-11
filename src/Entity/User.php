@@ -130,17 +130,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->pokedex;
     }
 
-    public function setPokedex(Pokedex $pokedex): static
-    {
-        // set the owning side of the relation if necessary
-        if ($pokedex->getOwner() !== $this) {
-            $pokedex->setOwner($this);
-        }
-
-        $this->pokedex = $pokedex;
-
-        return $this;
-    }
+   
 
     /**
      * @return Collection<int, Battle>

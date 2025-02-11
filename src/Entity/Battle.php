@@ -80,4 +80,23 @@ class Battle
 
         return $this;
     }
+
+    public function battle(?Pokemon $pokemonWild, ?Pokemon $pokemonPlayer): static
+    {
+        $levelPokemonPlayer = $pokemonPlayer->getLevel();
+        $strongPokemonPlayer = $pokemonPlayer->getStrong();
+        $scorePokemonPlayer = $levelPokemonPlayer*$strongPokemonPlayer;
+
+        $levelPokemonWild = $pokemonWild->getLevel();
+        $strongPokemonWild = $pokemonWild->getStrong();
+        $scorePokemonWild = $levelPokemonWild*$strongPokemonWild;
+
+        if($scorePokemonPlayer > $scorePokemonWild || $scorePokemonPlayer = $scorePokemonWild){
+            $this->setPokemonWinner(1);
+        }else{
+            $this->setPokemonWinner(-1);
+        }
+        return $this;
+    }
+
 }

@@ -16,20 +16,20 @@ class PokedexRepository extends ServiceEntityRepository
         parent::__construct($registry, Pokedex::class);
     }
 
-    //    /**
-    //     * @return Pokedex[] Returns an array of Pokedex objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('p.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    
+        /**
+         * @return Pokemon[] Returns an array of Pokémon objects
+         */
+        // public function findPokemonsByUser($user): array
+        // {
+        //     return $this->createQueryBuilder('p')
+        //         ->innerJoin('p.pokemons', 'pokemon')  // Aseguramos que la relación con Pokémon esté presente
+        //         ->andWhere('p.owner = :user')  // Filtramos por el dueño (usuario logueado)
+        //         ->setParameter('user', $user)  // Establecemos el parámetro con el usuario logueado
+        //         ->orderBy('pokemon.number', 'ASC')  // Ordenamos por el número de la Pokédex (opcional)
+        //         ->getQuery()
+        //         ->getResult();
+        // }
 
     //    public function findOneBySomeField($value): ?Pokedex
     //    {

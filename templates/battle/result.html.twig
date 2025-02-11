@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Battle{% endblock %}
+
+{% block body %}
+    <h1>Resultado Batalla</h1><br>
+
+    {% if battle.pokemonWinner == 1 %}
+
+        <h2>Tu {{ battle.pokemonPlayer.name }} ganó la batalla!</h2><br>
+
+    {% else %}
+
+        <h2>El {{ battle.pokemonWild.name }} salvaje ganó la batalla!</h2><br>
+
+    {% endif %}
+
+    <a href="{{ path('app_main') }}">Volver al inicio</a>
+    
+
+    {# <a href="{{ path('app_new_battle', {'id': battle.id}) }}">Luchar</a> #}
+
+    {# <a href="{{ path('app_battle_index') }}">back to list</a>
+
+    <a href="{{ path('app_battle_edit', {'id': battle.id}) }}">edit</a>
+
+    {{ include('battle/_delete_form.html.twig') }} #}
+{% endblock %}

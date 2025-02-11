@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entrenar Pokemon{% endblock %}
+
+{% block body %}
+    <h1>Entrenar Pokemon</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pokemon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ pokedex.id }}</td>
+                <td>{{ pokemon.image }}</td>
+                <td>
+                    <a href="{{ path('app_pokedex_training')}}">Entrenar más al Pokemon</a>
+                    <a href="{{ path('pokedex_user') }}">back to list</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
